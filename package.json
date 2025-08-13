@@ -60,11 +60,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Striffly/strapi-plugin-gitlab-publish.git"
+    "url": "git+ssh://git@github.com/jaygooby/strapi-plugin-gitlab-publish.git"
   },
   "bugs": {
-    "url": "https://github.com/Striffly/strapi-plugin-gitlab-publish/issues"
+      "url": "https://github.com/jaygooby/strapi-plugin-gitlab-publish/issues"
   },
-  "homepage": "https://github.com/Striffly/strapi-plugin-gitlab-publish#readme",
-  "author": "Clément Gayot <contact@clement-gayot.fr>"
+  "homepage": "https://github.com/jaygooby/strapi-plugin-gitlab-publish#readme",
+  "author": "Jay Caines-Gooby <jay@gooby.org>"
 }
