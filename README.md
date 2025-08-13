@@ -1,11 +1,10 @@
 # Strapi plugin gitlab-publish
 
-[![NPM version][npm-image]][npm-url]
-[![PR Welcome][npm-downloads-image]][npm-downloads-url]
-
 This is a plugin for [Strapi](https://github.com/strapi/strapi) headless CMS. It lets you trigger a GitLab Action workflow when the site is ready to be published.
 
-Inspired by [strapi-plugin-github-publish](https://github.com/phantomstudios/strapi-plugin-github-publish) project, thanks to [Phantom](https://github.com/phantomstudios) for his work !<br>
+Inspired by [strapi-plugin-github-publish](https://github.com/phantomstudios/strapi-plugin-github-publish) project, thanks to [Phantom](https://github.com/phantomstudios) for his work !
+
+Thanks also to [yasinyildirimeteration](https://github.com/yasinyildirimeteration) as their [pulled](https://github.com/Striffly/strapi-plugin-gitlab-publish/pull/2/commits/d3b57e8720460a0ca7ec6b30f6d76cb9950a95ab) [PRs](https://github.com/Striffly/strapi-plugin-gitlab-publish/pull/2/commits/8a4bc14de44993bdc990cf68f0a19e012b120e64) helped with this fork.
 
 ## Introduction
 
@@ -17,24 +16,10 @@ This plugin tackles the publishing flow a different way. The site administrators
 
 ## Installation
 
-Install this plugin with npm / yarn / pnpm.
+Install this plugin with npm 
 
-With npm:
-
-```bash
-npm install strapi-plugin-github-publish
 ```
-
-With yarn:
-
-```bash
-yarn add strapi-plugin-github-publish
-```
-
-With pnpm:
-
-```bash
-pnpm add strapi-plugin-github-publish
+npm i https://github.com/jaygooby/strapi-plugin-gitlab-publish
 ```
 
 ## Configuration
@@ -43,32 +28,27 @@ Generate a config file at `config/plugins.js` or `config/development/plugins.js`
 
 ```javascript
 module.exports = ({ env }) => ({
-  "github-publish": {
+  "gitlab-publish": {
     enabled: true,
     config: {
+      project_host: env("GITLAB_PROJECT_HOST"),
       project_id: env("GITLAB_PROJECT_ID"),
       project_branch: env("GITLAB_PROJECT_BRANCH"),
-      project_pipeline_token: env("GITLAB_PROJECT_PIPELINE_TOKEN"),
+      project_pipeline_token: env("GITLAB_PROJECT_PIPELINE_TOKEN"),      
     },
   },
 });
 ```
 
-Make sure you have variable in your .env file
+Make sure you have these variables in your .env file
 
 ```bash
-GITLAB_PROJECT_ID=tobemodified
-GITLAB_PROJECT_BRANCH=tobemodified
-GITLAB_PROJECT_PIPELINE_TOKEN=tobemodified
+GITLAB_PROJECT_HOST=gitlab.example.com
+GITLAB_PROJECT_ID=some-id
+GITLAB_PROJECT_BRANCH=your-branch
+GITLAB_PROJECT_PIPELINE_TOKEN=secret-token-value
 ```
 
 ## Use the Plugin
 
 When the plugin has been installed correctly just click on `GitLab Publish` in the sidebar under plugins then click "Publish".
-
-[npm-image]: https://img.shields.io/npm/v/strapi-plugin-gitlab-publish.svg?style=flat-square&logo=react
-[npm-url]: https://npmjs.org/package/strapi-plugin-gitlab-publish
-[npm-downloads-image]: https://img.shields.io/npm/dm/strapi-plugin-gitlab-publish.svg
-[npm-downloads-url]: https://npmcharts.com/compare/strapi-plugin-gitlab-publish?minimal=true
-[ci-image]: https://github.com/Striffly/strapi-plugin-gitlab-publish/workflows/Test/badge.svg
-[ci-url]: https://github.com/Striffly/strapi-plugin-gitlab-publish/actions
