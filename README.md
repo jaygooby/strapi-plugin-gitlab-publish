@@ -34,7 +34,8 @@ module.exports = ({ env }) => ({
       project_host: env("GITLAB_PROJECT_HOST"),
       project_id: env("GITLAB_PROJECT_ID"),
       project_branch: env("GITLAB_PROJECT_BRANCH"),
-      project_pipeline_token: env("GITLAB_PROJECT_PIPELINE_TOKEN"),      
+      project_pipeline_token: env("GITLAB_PROJECT_PIPELINE_TOKEN"),    
+      project_variables: env("GITLAB_PROJECT_VARIABLES"),  
     },
   },
 });
@@ -49,6 +50,12 @@ GITLAB_PROJECT_BRANCH=your-branch
 GITLAB_PROJECT_PIPELINE_TOKEN=secret-token-value
 ```
 
+the `GITLAB_PROJECT_VARIABLES` is optional. It should look like this:
+
+```
+GITLAB_PROJECT_VARIABLES=variables[foo]=bar
+```
+
 ## Use the Plugin
 
-When the plugin has been installed correctly just click on `GitLab Publish` in the sidebar under plugins then click "Publish".
+When the plugin has been installed correctly, click on `GitLab Publish` in the Strapi sidebar under plugins and then click "Deploy".
