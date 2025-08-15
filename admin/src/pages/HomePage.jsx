@@ -27,9 +27,10 @@ const HomePage = () => {
   };
 
   const handleSuccess = () => {
+
     toggleNotification({
       type: 'success',
-      message: 'Pipeline launched ! Check it on GitLab to see progress.',
+      message: `Pipeline launched - your site is deploying. See your Gitlab host to view its progress.`,
     });
   };
 
@@ -48,7 +49,7 @@ const HomePage = () => {
       <Page.Main>
         <Layouts.Header
           title={'GitLab Publish'}
-          subtitle={'Trigger GitLab pipeline in one click !'}
+          subtitle={'Deploy your site.'}
         />
 
         <Layouts.Content>
